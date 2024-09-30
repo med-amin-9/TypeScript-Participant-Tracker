@@ -1,0 +1,18 @@
+image: registry.bht-berlin.de:443/we1-24ws/uebung/we1.generic:latest
+
+stages:
+  - test
+  
+javascript:
+  variables:
+    SEFI_SELENIUM_CACHE_FOLDER: "."
+  stage: test
+  script:
+    - npm ci # like npm install, but faster (requires package-lock.json)
+#    - npm run build -- we use ts-jest, no need for compilation
+    - npm test -- --runInBand
+  coverage: '/^All files\s*\|\s*([0-9.]+)\s*\|.*/'
+  artifacts:
+    reports:
+      junit:
+        - junit.xml

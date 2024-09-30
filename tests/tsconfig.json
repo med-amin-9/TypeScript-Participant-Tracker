@@ -1,0 +1,10 @@
+{ // Diese Datei dient nur dazu, in VSCode Unterstützung im Test zu haben.
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "../src/**/*",
+    "./**/*"
+  ]
+}

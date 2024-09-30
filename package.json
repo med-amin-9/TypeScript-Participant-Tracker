@@ -1,0 +1,24 @@
+{
+  "name": "we1.blatt01",
+  "version": "1.0.0",
+  "description": "Web Engineering 1, Blatt 01",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "abgabe": "ziplocalgit zip -f abgabe_Blatt_01.zip",
+    "clean": "rimraf dist coverage junit.xml abgabe_Blatt_01.zip all.log"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.3.0",
+    "jest": "^29.7.0",
+    "jest-junit": "^16.0.0",
+    "rimraf": "^6.0.1",
+    "ts-jest": "^29.2.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "ziplocalgit": "^1.0.10"
+  },
+  "dependencies": {
+  }
+}
