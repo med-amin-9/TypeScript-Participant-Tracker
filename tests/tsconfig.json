@@ -1,4 +1,4 @@
-{ // Diese Datei dient nur dazu, in VSCode Unterstützung im Test zu haben.
+{ // Konfiguration von TypeScript für die Tests, die mit ts-jest ausgeführt werden.
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "noEmit": true
