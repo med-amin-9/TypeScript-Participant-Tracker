@@ -5,7 +5,7 @@ module.exports = {
   collectCoverage: true,
   reporters: [
     "default",
-    ["jest-junit", { suiteNameTemplate: "{filename}" }],
+    ["jest-junit", { suiteNameTemplate: "{filename}", "classNameTemplate": "{filename}", "titleTemplate": "{title}" }],
   ],
   collectCoverageFrom: ['<rootDir>/src/**/*.{ts,js,jsm,tsx,jsx,tsm}'],
   testPathIgnorePatterns: ["<rootDir>/dist/", "<rootDir>/node_modules/"],
