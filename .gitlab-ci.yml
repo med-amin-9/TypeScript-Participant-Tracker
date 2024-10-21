@@ -1,11 +1,9 @@
-image: registry.bht-berlin.de:443/we1-24ws/uebung/we1.generic:latest
+image: node:20
 
 stages:
   - test
   
 javascript:
-  variables:
-    SEFI_SELENIUM_CACHE_FOLDER: "."
   stage: test
   script:
     - npm ci # like npm install, but faster (requires package-lock.json)
