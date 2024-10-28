@@ -4,6 +4,7 @@
 export class Teilnehmer {
 
     // Ergänzen Sie hier die Felddeklarationen
+    Teilnehmerzahl: number = 0
 
     constructor() {
         // Initialisieren Sie hier die Felder
@@ -11,8 +12,9 @@ export class Teilnehmer {
 
     // Implementieren Sie die hier vorgegebenen Methoden:
 
-    getLetzteTeilnehmer(): number {
-        throw new Error("Not implemented yet");
+    getLetzteTeilnehmer(): number { 
+        if (!this.Teilnehmerzahl)
+        throw new Error("A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.");
     }
 
     registriereNeueTeilnehmer(teilnehmer: number): void {
