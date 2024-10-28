@@ -13,8 +13,10 @@ export class Teilnehmer {
     // Implementieren Sie die hier vorgegebenen Methoden:
 
     getLetzteTeilnehmer(): number { 
-        if (!this.Teilnehmerzahl)
-        throw new Error("A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.");
+        if (this.Teilnehmerzahl <= 0)
+            throw new Error("A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.");
+        else
+            return this.Teilnehmerzahl
     }
 
     registriereNeueTeilnehmer(teilnehmer: number): void {
