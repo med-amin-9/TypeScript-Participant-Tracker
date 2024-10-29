@@ -9,6 +9,7 @@ export class Teilnehmer {
     private minTeilnehmer: number | null = null;
     private maxTeilnehmer: number | null = null;
     private anzahlRegistrierungen: number = 0;  //damit wir danach inkrementieren können
+    private summeTeilnehmer: number = 0;        // damit wir arithmitische funktionen nutzen können
 
     constructor() {
         // Initialisieren Sie hier die Felder
@@ -56,9 +57,11 @@ export class Teilnehmer {
             this.maxTeilnehmer = Math.max(this.maxTeilnehmer, teilnehmer);
         }
 
-        // diese Zeilen wurden beim aufgabe 3.6 (Anzahlregistrierungen) hinzugefügt
+        // diese Zeile wurde beim aufgabe 3.6 (Anzahlregistrierungen) hinzugefügt
         this.anzahlRegistrierungen++;
 
+        // diese Zeile wurde beim aufgabe 3.7 (durchschnitt) hinzugefügt
+        this.summeTeilnehmer += teilnehmer;
     }
     // Ergänzen Sie hier die fehlenden Methoden:
 
@@ -109,5 +112,17 @@ export class Teilnehmer {
      */
     getAnzahl(): number {
         return this.anzahlRegistrierungen;
+    }
+
+    /**
+     * Gibt den Durchschnitt der registrierten Teilnehmerzahlen zurück.
+     * @returns Der Durchschnitt der Teilnehmerzahlen.
+     * @throws Fehler, falls keine Teilnehmer registriert sind.
+     */
+    getDurchschnitt(): number {
+        if (this.anzahlRegistrierungen === 0) {
+            throw new Error("Es wurde noch keine Teilnehmerzahl registriert.");
+        }
+        return this.summeTeilnehmer / this.anzahlRegistrierungen;
     }
 }

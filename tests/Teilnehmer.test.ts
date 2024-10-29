@@ -89,3 +89,17 @@ test("getAnzahl gibt die Anzahl der Registrierungen zurück", () => {
     testee.registriereNeueTeilnehmer(15);
     expect(testee.getAnzahl()).toBe(3); // Nach drei Registrierungen sollte die Anzahl 3 sein
 }); 
+
+test("getDurchschnitt wirft Fehler, wenn noch keine Teilnehmer registriert sind", () => {
+    const testee = new Teilnehmer();
+    expect(() => testee.getDurchschnitt()).toThrow("Es wurde noch keine Teilnehmerzahl registriert.");
+});
+
+test("getDurchschnitt berechnet den Durchschnitt der registrierten Teilnehmerzahlen", () => {
+    const testee = new Teilnehmer();
+    testee.registriereNeueTeilnehmer(5);
+    testee.registriereNeueTeilnehmer(10);
+    expect(testee.getDurchschnitt()).toBeCloseTo(7.5, 1); // Durchschnitt ist 7.5
+    testee.registriereNeueTeilnehmer(15);
+    expect(testee.getDurchschnitt()).toBeCloseTo(10, 1); // Durchschnitt ist 10
+});
