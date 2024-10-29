@@ -77,3 +77,15 @@ test("getMax gibt die höchste registrierte Teilnehmerzahl zurück", () => {
     testee.registriereNeueTeilnehmer(15);
     expect(testee.getMax()).toBe(15);
 });
+
+//frage ist die dependencie von andere funktion beim testen einer funktion normal ????? oder vlt mock ups in zukunft? 
+test("getAnzahl gibt die Anzahl der Registrierungen zurück", () => {
+    const testee = new Teilnehmer();
+    expect(testee.getAnzahl()).toBe(0); // Anfangswert sollte 0 sein
+    testee.registriereNeueTeilnehmer(10);
+    expect(testee.getAnzahl()).toBe(1); // Nach einer Registrierung sollte die Anzahl 1 sein
+    testee.registriereNeueTeilnehmer(5);
+    expect(testee.getAnzahl()).toBe(2); // Nach zwei Registrierungen sollte die Anzahl 2 sein
+    testee.registriereNeueTeilnehmer(15);
+    expect(testee.getAnzahl()).toBe(3); // Nach drei Registrierungen sollte die Anzahl 3 sein
+}); 

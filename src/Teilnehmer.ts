@@ -8,6 +8,7 @@ export class Teilnehmer {
     private vorletzteTeilnehmer: number | null = null;
     private minTeilnehmer: number | null = null;
     private maxTeilnehmer: number | null = null;
+    private anzahlRegistrierungen: number = 0;  //damit wir danach inkrementieren können
 
     constructor() {
         // Initialisieren Sie hier die Felder
@@ -41,7 +42,7 @@ export class Teilnehmer {
         this.vorletzteTeilnehmer = this.letzteTeilnehmer; 
         this.letzteTeilnehmer = teilnehmer;
         
-        // diese Zeilen wurden beim aufgabe 3.5 (min, max) hinzugefügt und angespasst
+        // diese Zeilen wurden beim aufgabe 3.5 (min, max) hinzugefügt
 
         if (this.minTeilnehmer === null) {
             this.minTeilnehmer = teilnehmer;
@@ -54,6 +55,10 @@ export class Teilnehmer {
         } else {
             this.maxTeilnehmer = Math.max(this.maxTeilnehmer, teilnehmer);
         }
+
+        // diese Zeilen wurden beim aufgabe 3.6 (Anzahlregistrierungen) hinzugefügt
+        this.anzahlRegistrierungen++;
+
     }
     // Ergänzen Sie hier die fehlenden Methoden:
 
@@ -85,7 +90,7 @@ export class Teilnehmer {
         }
         return this.minTeilnehmer;
     }
-    
+
     /**
      * Gibt die höchste registrierte Teilnehmerzahl zurück.
      * @returns Die höchste registrierte Teilnehmerzahl.
@@ -97,5 +102,12 @@ export class Teilnehmer {
         }
         return this.maxTeilnehmer;
     }
-
+    
+    /**
+     * Gibt die Anzahl der registrierten Teilnehmer zurück.
+     * @returns Die Anzahl der Registrierungen.
+     */
+    getAnzahl(): number {
+        return this.anzahlRegistrierungen;
+    }
 }
