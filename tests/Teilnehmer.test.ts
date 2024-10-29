@@ -38,5 +38,15 @@ Template für eigene Tests
 
 test("name", ()=>{
 
-})
-*/
+})*/
+test("getEntwicklung funktioniert korrekt", () => {
+    const testee = new Teilnehmer();
+    testee.registriereNeueTeilnehmer(5);
+    expect(() => testee.getEntwicklung()).toThrow("Entwicklung der Teilnehmerzahl kann nicht bestimmt werden.");
+    testee.registriereNeueTeilnehmer(10);
+    expect(testee.getEntwicklung()).toBe(1); // Entwicklung nach oben
+    testee.registriereNeueTeilnehmer(10);
+    expect(testee.getEntwicklung()).toBe(0); // Keine Veränderung
+    testee.registriereNeueTeilnehmer(5);
+    expect(testee.getEntwicklung()).toBe(-1); // Entwicklung nach unten
+});
