@@ -50,3 +50,30 @@ test("getEntwicklung funktioniert korrekt", () => {
     testee.registriereNeueTeilnehmer(5);
     expect(testee.getEntwicklung()).toBe(-1); // Entwicklung nach unten
 });
+
+
+test("getMin wirft Fehler, wenn noch keine Teilnehmer registriert sind", () => {
+    const testee = new Teilnehmer();
+    expect(() => testee.getMin()).toThrow("Es wurde noch keine Teilnehmerzahl registriert.");
+});
+
+test("getMin gibt die geringste registrierte Teilnehmerzahl zurück", () => {
+    const testee = new Teilnehmer();
+    testee.registriereNeueTeilnehmer(10);
+    testee.registriereNeueTeilnehmer(5);
+    testee.registriereNeueTeilnehmer(15);
+    expect(testee.getMin()).toBe(5);
+});
+
+test("getMax wirft Fehler, wenn noch keine Teilnehmer registriert sind", () => {
+    const testee = new Teilnehmer();
+    expect(() => testee.getMax()).toThrow("Es wurde noch keine Teilnehmerzahl registriert.");
+});
+
+test("getMax gibt die höchste registrierte Teilnehmerzahl zurück", () => {
+    const testee = new Teilnehmer();
+    testee.registriereNeueTeilnehmer(10);
+    testee.registriereNeueTeilnehmer(5);
+    testee.registriereNeueTeilnehmer(15);
+    expect(testee.getMax()).toBe(15);
+});

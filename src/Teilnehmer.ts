@@ -6,6 +6,8 @@ export class Teilnehmer {
     // Ergänzen Sie hier die Felddeklarationen
     private letzteTeilnehmer: number | null = null;
     private vorletzteTeilnehmer: number | null = null;
+    private minTeilnehmer: number | null = null;
+    private maxTeilnehmer: number | null = null;
 
     constructor() {
         // Initialisieren Sie hier die Felder
@@ -38,6 +40,20 @@ export class Teilnehmer {
         // diese Zeilen wurden beim aufgabe 3.4 (entwicklung) hinzugefügt und angespasst 
         this.vorletzteTeilnehmer = this.letzteTeilnehmer; 
         this.letzteTeilnehmer = teilnehmer;
+        
+        // diese Zeilen wurden beim aufgabe 3.5 (min, max) hinzugefügt und angespasst
+
+        if (this.minTeilnehmer === null) {
+            this.minTeilnehmer = teilnehmer;
+        } else {
+            this.minTeilnehmer = Math.min(this.minTeilnehmer, teilnehmer);
+        }
+        
+        if (this.maxTeilnehmer === null) {
+            this.maxTeilnehmer = teilnehmer;
+        } else {
+            this.maxTeilnehmer = Math.max(this.maxTeilnehmer, teilnehmer);
+        }
     }
     // Ergänzen Sie hier die fehlenden Methoden:
 
@@ -58,4 +74,28 @@ export class Teilnehmer {
             return 0;
         }
     }
+    /**
+     * Gibt die geringste registrierte Teilnehmerzahl zurück.
+     * @returns Die geringste registrierte Teilnehmerzahl.
+     * @throws Fehler, falls keine Teilnehmer registriert sind.
+     */
+    getMin(): number {
+        if (this.minTeilnehmer === null) {
+            throw new Error("Es wurde noch keine Teilnehmerzahl registriert.");
+        }
+        return this.minTeilnehmer;
+    }
+    
+    /**
+     * Gibt die höchste registrierte Teilnehmerzahl zurück.
+     * @returns Die höchste registrierte Teilnehmerzahl.
+     * @throws Fehler, falls keine Teilnehmer registriert sind.
+     */
+    getMax(): number {
+        if (this.maxTeilnehmer === null) {
+            throw new Error("Es wurde noch keine Teilnehmerzahl registriert.");
+        }
+        return this.maxTeilnehmer;
+    }
+
 }
