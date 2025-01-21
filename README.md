@@ -1,29 +1,55 @@
-[![pipeline status](../../../badges/main/pipeline.svg)](../../../-/pipelines/latest)
-[![coverage](../../../badges/main/coverage.svg)](../../../-/pipelines/latest)
+# Project: Participant Management with TypeScript
 
-# WE 1, Blatt 01
+This repository contains the implementation of a participant management system as part of the "Web Engineering" module. The project emphasizes learning JavaScript/TypeScript, object-oriented programming, and test-driven development with Jest.
 
-Zur Bearbeitung und Abgabe des Aufgabenblattes gehen Sie wie folgt vor:
+## Project Description
+The project focuses on creating a `Teilnehmer` class to manage participant statistics, including methods for:
+- Registering participants
+- Retrieving the last, minimum, maximum, and average participant counts
+- Tracking changes in participant numbers
 
-1. Erstellen Sie einen Fork des Projekts unter Ihrer Gitlab-Kennung.
-2. Setzen Sie die Sichtbarkeit Ihres Forks auf private.
-3. Klonen Sie Ihren Fork.
-4. Führen Sie `npm install` im Projektverzeichnis aus.
-5. Bearbeiten Sie die Aufgabe auf dem Branch "main" (dies ist der Standard, normalerweise sollten Sie mit Branches nichts zu tun haben).
-6. 'Committen' Sie alle Ihre Änderungen mindestens nach jeder Teilaufgabe. Geben Sie sinnvolle Commit-Messages an!
+The implementation avoids the use of arrays and achieves high code coverage through comprehensive testing.
 
-Die Tests müssen via `npm test` ausführbar sein. Dies ist initial auch schon so konfiguriert.
+## Features
+- Object-oriented design in TypeScript
+- Test-driven development with Jest
+- Code coverage of 98% or higher
 
-Die Pipeline (siehe Badge oben) zeigt Ihnen in Ihrem Gitlab-Fork an, ob Ihr Projekt grundsätzlich für die automatische Korrektur vorbereitet ist. Dazu müssen Sie alle Ihre Änderungen mit `git push` nach Gitlab spielen.
+## Prerequisites
+- Node.js (v16 or newer)
+- npm (v8 or newer)
 
-Für die Abgabe erstellen Sie eine Zip-Datei `abgabe-Blatt_01.zip` mittels
-```
-npm run abgabe
-```
-Diese enthält Ihr lokales Repository. Diese Datei müssen Sie dann in Moodle hochladen.
+## Getting Started
 
-Weiteres zur Bearbeitung und Abgabe finden Sie im Blatt "Modalitäten" unter Moodle.
+1. **Clone the Repository:**
+   ```bash
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
 
-## Lizenz (License)
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
 
-Die Dateien dürfen nur im Rahmen der oben genannten Vorlesung verwendet werden und sind nur zum persönlichen Gebrauch bestimmt.
+3. **Run Tests:**
+   ```bash
+   npm test
+   ```
+
+4. **Build the Project:**
+   ```bash
+   npm run build
+   ```
+
+## Folder Structure
+- `src/`: Contains the TypeScript source code
+- `tests/`: Contains Jest test cases
+
+## Scripts
+- `npm install`: Installs dependencies
+- `npm test`: Runs tests and shows code coverage
+- `npm run build`: Compiles TypeScript into JavaScript
+
+## License
+This project is licensed under the MIT License.
